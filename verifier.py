@@ -38,7 +38,7 @@ def verify_task_output(task_description, input_content, output_content, script_c
         messages=[
             {
                 "role": "system", 
-                "content": "You are an evaluation assistant that verifies if the OUTPUT correctly addresses the given task. Your evaluation must follow this exact format:\n\n1) Rating: [X]/10\n\n2) Evaluation: [2-3 sentences explaining if the OUTPUT meets the TASK requirements]\n\nIMPORTANT RULES:\n- Assume all scripts have executed successfully - the OUTPUT exists because the script worked correctly.\n- Focus ONLY on comparing the OUTPUT with the TASK requirements.\n- Do NOT speculate about how the code might execute - it DID execute successfully.\n- Ignore implementation details completely (API keys, error handling, etc.).\n- Judge solely on whether the OUTPUT matches what was requested in the TASK."
+                "content": "You are an evaluation assistant that verifies if the OUTPUT correctly addresses the given task. Your evaluation must follow this exact format:\n\n1) Status: [PASS/FAIL]\n\n2) Evaluation: [2-3 sentences explaining if the OUTPUT meets the TASK requirements]\n\nIMPORTANT RULES:\n- Assign PASS if the output meets the requirements of the task, otherwise assign FAIL.\n- Assume all scripts have executed successfully - the OUTPUT exists because the script worked correctly.\n- Focus ONLY on comparing the OUTPUT with the TASK requirements.\n- Do NOT speculate about how the code might execute - it DID execute successfully.\n- Ignore implementation details completely (API keys, error handling, etc.).\n- Judge solely on whether the OUTPUT matches what was requested in the TASK."
             },
             {
                 "role": "user", 
@@ -49,7 +49,7 @@ def verify_task_output(task_description, input_content, output_content, script_c
                            f"IMPORTANT INSTRUCTIONS:\n"
                            f"1. The script has been SUCCESSFULLY EXECUTED, and the output above is the actual result.\n"
                            f"2. Follow the EXACT format for your evaluation:\n"
-                           f"   a) Rating: [X]/10\n"
+                           f"   a) Status: [PASS/FAIL]\n"
                            f"   b) Evaluation: [Your brief assessment in 2-3 sentences]\n"
                            f"3. ONLY evaluate if the OUTPUT correctly fulfills the TASK description.\n"
                            f"4. DO NOT consider implementation details of the script."
@@ -182,15 +182,15 @@ def process_single_task(script_path, task_description=None, input_file=None, out
     
     save_success = save_result(verification_result, result_file)
     
-    rating_match = re.search(r'Rating:\s*(\d+)\/10', verification_result)
-    rating = int(rating_match.group(1)) if rating_match else 0
+    status_match = re.search(r'Status:\s*(PASS|FAIL)', verification_result, re.IGNORECASE)
+    status = status_match.group(1).upper() if status_match else "UNKNOWN"
     
     return {
         "script": script_path,
         "input": input_file,
         "output": output_file,
         "result": result_file,
-        "rating": rating,
+        "status": status,
         "verification": verification_result,
         "save_success": save_success
     }
@@ -231,22 +231,23 @@ def generate_summary_report(results, output_file="verification_summary.md"):
     for lecture, lecture_results in sorted(lecture_results.items()):
         report += f"## {lecture.capitalize()}\n\n"
         
-        lecture_results.sort(key=lambda x: x.get("rating", 0), reverse=True)
+        lecture_results.sort(key=lambda x: 0 if x.get("status", "") == "PASS" else 1)
         
-        report += "| Task | Rating | Evaluation |\n"
+        report += "| Task | Status | Evaluation |\n"
         report += "|------|--------|------------|\n"
         
         for result in lecture_results:
             script_name = os.path.basename(result["script"])
             task_name = os.path.splitext(script_name)[0]
-            rating = result.get("rating", "N/A")
+            status = result.get("status", "UNKNOWN")
             
             verification = result.get("verification", "")
             eval_match = re.search(r'Evaluation:\s*(.*?)(?:\.|$)', verification, re.DOTALL)
             short_eval = eval_match.group(1).strip() if eval_match else "N/A"
             
             result_file = os.path.relpath(result["result"]) if result.get("result") else "#"
-            report += f"| [{task_name}]({result_file}) | {rating}/10 | {short_eval} |\n"
+            status_emoji = "✅" if status == "PASS" else "❌"
+            report += f"| [{task_name}]({result_file}) | {status_emoji} {status} | {short_eval} |\n"
         
         report += "\n"
     
@@ -285,8 +286,9 @@ def batch_process_tasks(scripts=None, max_workers=5):
                 if "error" in result:
                     print(f"✗ Error: {os.path.basename(script)} - {result['error']}")
                 else:
-                    rating = result.get("rating", "??")
-                    print(f"✓ Verified: {os.path.basename(script)} - Rating: {rating}/10")
+                    status = result.get("status", "UNKNOWN")
+                    status_emoji = "✅" if status == "PASS" else "❌"
+                    print(f"{status_emoji} Verified: {os.path.basename(script)} - Status: {status}")
             except Exception as e:
                 print(f"✗ Error processing {script}: {e}")
                 results.append({"script": script, "error": str(e)})
