@@ -1,0 +1,67 @@
+Meeting Transcript: Project Status Update
+Date: July 15, 2023
+Time: 10:00 AM - 11:30 AM
+
+[10:00] Sarah (Project Manager): Good morning everyone. Let's get started with our weekly status update. First, I'd like to go around and have each team lead give a quick update on their progress.
+
+[10:02] John (Development Lead): Thanks, Sarah. My team has completed the backend API integration we discussed last week. We're about 85% done with the user authentication module, but we've hit a snag with the third-party OAuth provider. We might need an extra day or two to resolve that issue.
+
+[10:05] Lisa (UX Designer): The user interface designs for the dashboard are complete and have been sent for review. We've incorporated the feedback from the last usability tests and made the navigation more intuitive. I've shared the updated mockups in our shared folder.
+
+[10:08] Michael (QA Lead): We've started testing the completed modules. So far we've logged 23 issues, most of them minor. There are three high-priority bugs related to data synchronization that the development team should look at as soon as possible.
+
+[10:10] Sarah: Thanks for the updates. John, what's the specific issue with the OAuth provider?
+
+[10:11] John: Their documentation is outdated, and their latest update changed some endpoints without proper notification. We're in touch with their support team to get the correct information.
+
+[10:13] Alex (Product Owner): Do we need to consider an alternative authentication method as a backup plan?
+
+[10:14] John: We could fall back to our own authentication system, but that would mean users can't use their existing social media accounts to log in.
+
+[10:16] Sarah: Let's give it until Wednesday. If it's not resolved by then, we'll implement our own system temporarily and add the social login in a future update.
+
+[10:18] Rachel (Marketing): Just a reminder that we need to finalize the landing page content by Friday if we want to stick to our launch schedule. I'll need the final screenshots of the working product by Thursday morning.
+
+[10:20] Lisa: I can work with John to make sure we have presentable screens ready for marketing by Thursday.
+
+[10:22] Sarah: Great. Michael, regarding those high-priority bugs - what's the estimated time to fix them?
+
+[10:23] Michael: Based on previous similar issues, I'd say about 2-3 days of development work plus a day for testing.
+
+[10:25] Sarah: John, can your team prioritize those bugs?
+
+[10:26] John: Yes, I'll assign two developers to work on them starting this afternoon.
+
+[10:30] Sarah: Let's talk about the client demo scheduled for next Monday. Are we confident we'll have a stable version ready?
+
+[10:32] John: If we resolve the OAuth issue and fix the high-priority bugs, yes. The rest of the features are stable enough for a demo.
+
+[10:35] Michael: I suggest we prepare a controlled environment for the demo to avoid unexpected issues.
+
+[10:36] Sarah: Good idea. Let's set up a separate instance with pre-populated data specifically for the demo.
+
+[10:45] Sarah: Any other concerns or topics we need to discuss?
+
+[10:47] Alex: The client has asked if we can add a data export feature. It wasn't in the original requirements, but they're saying it's important for their compliance needs.
+
+[10:50] Sarah: That's a significant change at this stage. Let me discuss with the client after this meeting to understand the priority and see if we can move it to phase two.
+
+[11:00] Sarah: Alright, let's summarize our action items:
+- John's team to fix the OAuth issue by Wednesday and address high-priority bugs
+- Lisa to provide final screenshots to Rachel by Thursday morning
+- Michael to prepare a controlled demo environment by Friday
+- I'll talk to the client about the export feature request
+
+[11:05] Sarah: Does anyone have questions about their assignments?
+
+[11:07] John: All clear on my end.
+
+[11:08] Lisa: No questions.
+
+[11:09] Michael: I'm good.
+
+[11:10] Rachel: Clear for me too.
+
+[11:11] Sarah: Great. Let's meet again on Friday for a quick pre-demo review. Thanks, everyone!
+
+[Meeting ended at 11:15 AM] 

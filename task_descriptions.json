@@ -1,0 +1,13 @@
+{
+    "lecture_1": {
+        "meetingProcessing.py": "Transform the transcription of a meeting into a list of actions to be taken (action items). The script should analyze meeting text, identify commitments, promises, and tasks assigned to team members, and output a structured list of action items with responsible person and timeline when available.",
+        "boilerplateCode.py": "Create a script that receives the description of a class or function (e.g., 'a User class with id, name, email, and a method to validate the email') and generates the corresponding code in Python. The script should handle various types of code structures and include appropriate docstrings and type hints.",
+        "emailClassifier.py": "Develop a tool that reads emails from a support team and classifies them as 'Technical Question', 'Billing Problem', or 'Product Feedback'. The script should analyze the content of each email and determine the most appropriate category based on the text.",
+        "testeCase.py": "Create test cases based on functional specifications using prompt engineering. The script should generate comprehensive unittest-based test cases that validate the functionality described in specifications."
+    },
+    "lecture_2": {
+        "logFileAnalyzer.py": "Create a script that processes application logs, identifies error messages, and uses an LLM to explain the probable cause and suggest a solution. The script should be able to filter through large log files, detect patterns of errors, and provide helpful troubleshooting information.",
+        "serviceStatusMonitor.py": "Build an agent that monitors a service's status page. If a new incident is reported, the agent uses an LLM to summarize the problem and generate a formatted message. The script should be able to detect changes in status and provide clear, concise summaries of ongoing incidents.",
+        "contentScraper.py": "Write a script to webscrape a documentation page, navigate through all its sub-pages, and parse the HTML content into clean Markdown (.md) files. The script should maintain the original structure while converting the content to easily readable markdown format."
+    }
+} 

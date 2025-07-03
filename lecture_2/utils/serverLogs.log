@@ -1,0 +1,6 @@
+[2023-09-10 08:14:22] [INFO] Server starting on port 8080
+[2023-09-10 08:14:23] [INFO] Connected to database successfully
+[2023-09-10 08:14:24] [INFO] Server started successfully
+[2023-09-10 08:17:31] [ERROR] Database connection lost: Connection refused to db.example.com:5432
+[2023-09-10 08:17:32] [ERROR] Failed to process request: GET /api/products - 500 Internal Server Error
+[2023-09-10 08:22:30] [ERROR] Exception in thread "main": java.lang.OutOfMemoryError: Java heap space

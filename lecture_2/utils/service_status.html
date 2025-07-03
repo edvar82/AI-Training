@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Services Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .header {
+            background-color: #0066cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .status-section {
+            margin-bottom: 30px;
+        }
+        .status-section h2 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .service-status {
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .operational {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+        }
+        .degraded {
+            background-color: #fff9e6;
+            border-left: 5px solid #ffcc00;
+        }
+        .outage {
+            background-color: #ffe6e6;
+            border-left: 5px solid #ff3333;
+        }
+        .incident {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .incident h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .incident .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .status.investigating {
+            background-color: #ffe6e6;
+            color: #cc0000;
+        }
+        .status.identified {
+            background-color: #fff9e6;
+            color: #997700;
+        }
+        .status.monitoring {
+            background-color: #e6f2ff;
+            color: #0055aa;
+        }
+        .status.resolved {
+            background-color: #e6ffe6;
+            color: #007700;
+        }
+        .time {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .description {
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cloud Services Status</h1>
+        <p>Current status of our cloud platform services</p>
+    </div>
+
+    <div class="status-section">
+        <h2>Current Service Status</h2>
+        <div class="service-grid">
+            <div class="service-status operational">
+                <h3>Compute Engine</h3>
+                <p>Operational</p>
+            </div>
+            <div class="service-status operational">
+                <h3>Object Storage</h3>
+                <p>Operational</p>
+            </div>
+            <div class="service-status degraded">
+                <h3>Database Service</h3>
+                <p>Degraded Performance</p>
+            </div>
+            <div class="service-status operational">
+                <h3>Authentication</h3>
+                <p>Operational</p>
+            </div>
+            <div class="service-status outage">
+                <h3>API Gateway</h3>
+                <p>Service Disruption</p>
+            </div>
+            <div class="service-status operational">
+                <h3>Content Delivery</h3>
+                <p>Operational</p>
+            </div>
+            <div class="service-status operational">
+                <h3>Monitoring</h3>
+                <p>Operational</p>
+            </div>
+            <div class="service-status operational">
+                <h3>DNS Services</h3>
+                <p>Operational</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="status-section">
+        <h2>Active Incidents</h2>
+        
+        <div class="incident">
+            <h3>API Gateway Service Disruption</h3>
+            <p class="status investigating">Investigating</p>
+            <p class="time">September 15, 2023 - 10:23 AM UTC</p>
+            <p class="description">We are currently investigating issues with our API Gateway service. Users are reporting 503 errors when making API calls. Our engineering team is actively working to identify the root cause. Some regions appear to be more affected than others, with the US-East region showing the highest error rates. We recommend temporarily routing requests through our backup endpoints as documented in our disaster recovery guide.</p>
+        </div>
+        
+        <div class="incident">
+            <h3>Database Service Performance Degradation</h3>
+            <p class="status identified">Issue Identified</p>
+            <p class="time">September 15, 2023 - 09:15 AM UTC</p>
+            <p class="description">We have identified the cause of the database service performance degradation. A scheduled maintenance job is causing higher than normal CPU usage on our database clusters. This is resulting in increased latency for database operations, particularly for complex queries. We are working to optimize the maintenance job to reduce its impact. In the meantime, we recommend implementing query caching where possible and avoiding non-essential complex queries until the issue is resolved. We expect to have this issue mitigated within the next 2 hours.</p>
+        </div>
+    </div>
+
+    <div class="status-section">
+        <h2>Recent Incidents</h2>
+        
+        <div class="incident">
+            <h3>Content Delivery Network Outage</h3>
+            <p class="status resolved">Resolved</p>
+            <p class="time">September 14, 2023 - 14:45 PM UTC</p>
+            <p class="description">The CDN outage that affected content delivery in the APAC region has been fully resolved. The issue was caused by a configuration error during a routine update to our edge servers. All services have been restored to normal operation, and we have implemented additional validation checks to prevent similar issues in the future. We apologize for any inconvenience this may have caused.</p>
+        </div>
+        
+        <div class="incident">
+            <h3>Authentication Service Intermittent Failures</h3>
+            <p class="status resolved">Resolved</p>
+            <p class="time">September 12, 2023 - 08:30 AM UTC</p>
+            <p class="description">The intermittent failures in our authentication service have been resolved. The issue was caused by a memory leak in one of our authentication microservices, which has been identified and patched. We have deployed the fix across all regions, and service has returned to normal. We have also added additional monitoring to detect similar issues earlier in the future.</p>
+        </div>
+
+        <div class="incident">
+            <h3>Critical Security Vulnerability Detected</h3>
+            <p class="status investigating">Urgent</p>
+            <p class="time">September 16, 2023 - 07:30 AM UTC</p>
+            <p class="description">Our security team has identified a critical vulnerability affecting the authentication service. This zero-day vulnerability could potentially allow unauthorized access to user accounts. We are actively investigating the issue and deploying emergency patches. As a precautionary measure, we recommend enabling two-factor authentication for all admin accounts immediately. We will provide updates as more information becomes available.</p>
+        </div>
+    </div>
+
+    <footer style="text-align: center; margin-top: 40px; color: #666;">
+        <p>Last updated: September 16, 2023 - 08:30 AM UTC</p>
+        <p>For support, please contact our <a href="#">customer service team</a>.</p>
+    </footer>
+</body>
+</html> 

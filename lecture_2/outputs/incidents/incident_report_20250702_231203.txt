@@ -1,0 +1,21 @@
+# Service Incident Report
+Generated: 2025-07-02 23:12:03
+
+## Incident Details
+Title: API Gateway Service Disruption
+Status: Investigating
+Time: September 15, 2023 - 10:23 AM UTC
+
+## Summary
+**Incident Alert: API Gateway Service Disruption**  
+**Status:** Investigating  
+**Time:** September 15, 2023 - 10:23 AM UTC  
+
+**Affected Service:** API Gateway  
+**Issue Summary:** Users are experiencing 503 errors when making API calls. The US-East region is notably impacted with higher error rates.  
+
+**Current Status:** The engineering team is actively investigating to identify the root cause of the disruption.  
+
+**Recommended Actions:** We advise users to temporarily route API requests through backup endpoints as outlined in our disaster recovery guide.  
+
+We will provide updates as new information arises.

@@ -1,0 +1,37 @@
+# Meeting Action Items
+
+**Extracted on:** 2025-07-02 23:08
+
+## Summary
+
+**Total Action Items:** 4
+
+**High Priority Items:** 2
+**Medium Priority Items:** 2
+
+## Action Items by Person
+
+### John (Development Lead)
+
+**1. [High] Fix the OAuth issue with the third-party provider and resolve the high-priority bugs related to data synchronization.**
+   - **Deadline:** Wednesday, July 19, 2023
+   - **Context:** The OAuth issue is impacting the user authentication module and the high-priority bugs need to be addressed for a stable demo version.
+
+### Lisa (UX Designer)
+
+**1. [High] Provide final screenshots of the working product to Rachel.**
+   - **Deadline:** Thursday morning, July 20, 2023
+   - **Context:** Rachel needs the screenshots finalized by Friday for the landing page content.
+
+### Michael (QA Lead)
+
+**1. [Medium] Prepare a controlled demo environment with pre-populated data.**
+   - **Deadline:** Friday, July 21, 2023
+   - **Context:** This is to ensure a stable presentation for the demo scheduled next Monday.
+
+### Sarah (Project Manager)
+
+**1. [Medium] Discuss with the client about the request for a data export feature and assess its priority for potential inclusion in phase two.**
+   - **Deadline:** After the meeting (July 15, 2023)
+   - **Context:** The request was brought up by Alex and needs clarification to decide on its implementation possibility.
+
