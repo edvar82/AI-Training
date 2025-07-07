@@ -1,0 +1,37 @@
+Job Title: Full Stack Developer
+
+Job Description:
+We are seeking a talented Full Stack Developer to join our dynamic team. The ideal candidate will be responsible for developing and maintaining both front-end and back-end components of our web applications. This role requires expertise in multiple programming languages and frameworks, with a strong understanding of how all parts of the web development stack work together.
+
+Responsibilities:
+- Design, develop, and maintain both front-end and back-end web applications
+- Write clean, efficient, and well-documented code
+- Collaborate with cross-functional teams to define, design, and ship new features
+- Ensure the technical feasibility of UI/UX designs
+- Optimize applications for maximum speed and scalability
+- Participate in code reviews and contribute to team best practices
+
+Required Skills:
+- 3+ years of experience in full stack development
+- Proficiency in JavaScript, HTML5, and CSS3
+- Experience with front-end frameworks such as React, Angular, or Vue.js
+- Experience with back-end languages such as Node.js, Python, or Java
+- Knowledge of server-side frameworks like Express, Django, or Spring
+- Familiarity with database technologies (SQL: MySQL, PostgreSQL; NoSQL: MongoDB)
+- Experience with RESTful APIs and microservices architecture
+- Version control with Git
+- Understanding of CI/CD pipelines
+
+Preferred Qualifications:
+- Experience with cloud platforms (AWS, Azure, or GCP)
+- Knowledge of containerization (Docker, Kubernetes)
+- Understanding of Agile/Scrum methodologies
+- Experience with test-driven development
+- Knowledge of security and data protection best practices
+
+Education:
+- Bachelor's degree in Computer Science, Software Engineering, or related field (or equivalent practical experience)
+
+Location: [City, State] (Remote options available)
+Employment Type: Full-time
+Salary Range: $85,000 - $120,000 based on experience

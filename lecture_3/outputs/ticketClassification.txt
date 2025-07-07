@@ -1,0 +1,67 @@
+# Classificação de Tickets de Suporte
+
+## Resumo
+
+Total de tickets: 6
+
+### Distribuição por Prioridade
+- High: 1 (16.7%)
+- Low: 5 (83.3%)
+
+### Distribuição por Categoria
+- Other: 2
+- Feature Request: 2
+- Account: 1
+- Question: 1
+- Performance: 1
+
+## Detalhes dos Tickets
+
+### Ticket #1
+**Usuário:** joao.silva
+**Sistema Operacional:** Windows 11
+**Versão do Software:** 2.3.5
+**Prioridade:** High
+**Categorias:** Other
+**Descrição:** O sistema trava completamente quando tento exportar um relatório com mais de 100 linhas. Preciso urgentemente resolver isso pois tenho uma apresentaçã...
+
+### Ticket #2
+**Usuário:** maria.santos
+**Sistema Operacional:** macOS Monterey
+**Versão do Software:** 2.3.4
+**Prioridade:** Low
+**Categorias:** Account, Question
+**Descrição:** Como faço para alterar a senha da minha conta? Não encontro essa opção em lugar nenhum nas configurações.
+
+### Ticket #3
+**Usuário:** carlos.oliveira
+**Sistema Operacional:** Ubuntu 22.04
+**Versão do Software:** 2.3.5
+**Prioridade:** Low
+**Categorias:** Feature Request
+**Descrição:** Seria bom se pudéssemos ter a opção de exportar os dados em formato CSV além do PDF atual. Isso facilitaria muito a integração com outras ferramentas.
+
+### Ticket #4
+**Usuário:** ana.pereira
+**Sistema Operacional:** Windows 10
+**Versão do Software:** 2.3.5
+**Prioridade:** Low
+**Categorias:** Performance
+**Descrição:** Estou enfrentando lentidão extrema ao carregar projetos com mais de 20 arquivos. O software fica travando e às vezes fecha inesperadamente.
+
+### Ticket #5
+**Usuário:** pedro.costa
+**Sistema Operacional:** macOS Ventura
+**Versão do Software:** 2.3.6
+**Prioridade:** Low
+**Categorias:** Other
+**Descrição:** As notificações não estão funcionando corretamente. Não recebo alertas quando um colega compartilha um documento comigo.
+
+### Ticket #6
+**Usuário:** lucia.martins
+**Sistema Operacional:** Fedora 36
+**Versão do Software:** 2.3.5
+**Prioridade:** Low
+**Categorias:** Feature Request
+**Descrição:** Gostaria de sugerir a implementação de um tema escuro para a interface. Trabalho muito à noite e isso reduziria o cansaço visual.
+

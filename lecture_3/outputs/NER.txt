@@ -1,0 +1,21 @@
+Unique Technologies Mentioned:
+node.js
+mysql
+azure
+angular
+aws
+django
+java
+kubernetes
+sql
+python
+react
+ci/cd
+postgresql
+javascript
+docker
+mongodb
+vue
+gcp
+spring
+git

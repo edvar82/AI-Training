@@ -1,0 +1,35 @@
+Ticket #1
+Username: joao.silva
+OS: Windows 11
+Version: 2.3.5
+Description: O sistema trava completamente quando tento exportar um relatório com mais de 100 linhas. Preciso urgentemente resolver isso pois tenho uma apresentação amanhã.
+
+Ticket #2
+Username: maria.santos
+OS: macOS Monterey
+Version: 2.3.4
+Description: Como faço para alterar a senha da minha conta? Não encontro essa opção em lugar nenhum nas configurações.
+
+Ticket #3
+Username: carlos.oliveira
+OS: Ubuntu 22.04
+Version: 2.3.5
+Description: Seria bom se pudéssemos ter a opção de exportar os dados em formato CSV além do PDF atual. Isso facilitaria muito a integração com outras ferramentas.
+
+Ticket #4
+Username: ana.pereira
+OS: Windows 10
+Version: 2.3.5
+Description: Estou enfrentando lentidão extrema ao carregar projetos com mais de 20 arquivos. O software fica travando e às vezes fecha inesperadamente.
+
+Ticket #5
+Username: pedro.costa
+OS: macOS Ventura
+Version: 2.3.6
+Description: As notificações não estão funcionando corretamente. Não recebo alertas quando um colega compartilha um documento comigo.
+
+Ticket #6
+Username: lucia.martins
+OS: Fedora 36
+Version: 2.3.5
+Description: Gostaria de sugerir a implementação de um tema escuro para a interface. Trabalho muito à noite e isso reduziria o cansaço visual.
