@@ -1,0 +1,3 @@
+Pergunta: O que é programação dinâmica?
+
+Resposta: Programação dinâmica é uma técnica de otimização utilizada em algoritmos para resolver problemas complexos, dividindo-os em subproblemas mais simples e armazenando os resultados desses subproblemas para evitar cálculos redundantes. Essa abordagem é especialmente útil em problemas que podem ser divididos em subproblemas que se sobrepõem, permitindo que a solução de um problema maior seja construída a partir das soluções de subproblemas menores. A programação dinâmica é frequentemente aplicada em áreas como otimização, teoria dos grafos e problemas combinatórios.

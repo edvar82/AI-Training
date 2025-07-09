@@ -1,0 +1,52 @@
+{
+  "invoice_number": "0004",
+  "invoice_date": "2025-07-09",
+  "due_date": "2025-08-08",
+  "vendor": {
+    "name": "Salgados 123",
+    "address": null,
+    "phone": null,
+    "email": null,
+    "website": null,
+    "tax_id": null
+  },
+  "customer": {
+    "name": "Erinaldo Bandeira",
+    "address": null,
+    "customer_id": null
+  },
+  "line_items": [
+    {
+      "description": "Pizza",
+      "quantity": 2,
+      "unit_price": 28,
+      "total": 56
+    },
+    {
+      "description": "Coxinha",
+      "quantity": 1,
+      "unit_price": 19,
+      "total": 19
+    }
+  ],
+  "subtotal": 75,
+  "taxes": [
+    {
+      "type": null,
+      "rate": 0,
+      "amount": 0
+    }
+  ],
+  "discounts": [],
+  "total_amount": 75,
+  "payment_info": {
+    "method": null,
+    "details": null,
+    "status": null
+  },
+  "notes": null,
+  "metadata": {
+    "currency": "USD",
+    "invoice_type": null
+  }
+}

@@ -9,5 +9,13 @@
         "logFileAnalyzer.py": "Create a script that processes application logs, identifies error messages, and uses an LLM to explain the probable cause and suggest a solution. The script should be able to filter through large log files, detect patterns of errors, and provide helpful troubleshooting information.",
         "serviceStatusMonitor.py": "Build an agent that monitors a service's status page. If a new incident is reported, the agent uses an LLM to summarize the problem and generate a formatted message. The script should be able to detect changes in status and provide clear, concise summaries of ongoing incidents.",
         "contentScraper.py": "Write a script to webscrape a documentation page, navigate through all its sub-pages, and parse the HTML content into clean Markdown (.md) files. The script should maintain the original structure while converting the content to easily readable markdown format."
+    },
+    "lecture_5": {
+        "hallucinationVerifier.py": "Desenvolver um processo de múltiplas etapas para verificar se um modelo de linguagem está alucinando, primeiro fazendo uma pergunta ao LLM, segundo, solicitando as fontes que embasam a resposta, e terceiro, pedindo ao modelo para verificar sua resposta contra as fontes fornecidas. O script deve gerar um relatório detalhado da verificação.",
+        "invoiceParser.py": "Construir um analisador de faturas que converte documentos PDF em formato JSON estruturado. O script deve extrair informações como número da fatura, data, fornecedor, cliente, itens da fatura, valores e método de pagamento, utilizando engenharia de prompt robusta para lidar com diferentes formatos de fatura."
+    },
+    "lecture_6": {
+        "corporateChatbot.py": "Construir um chatbot que responde perguntas sobre um conjunto de documentos corporativos através da indexação e recuperação de informações de arquivos PDF pré-definidos. O script deve utilizar LangChain para implementar um sistema RAG (Retrieval Augmented Generation), dividindo os documentos em chunks, criando embeddings, e permitindo consultas interativas com memória de contexto.",
+        "codebaseQA.py": "Criar um chatbot que responde perguntas sobre um repositório de software, indexando todos os arquivos .py, .js e .md para fornecer respostas precisas. O script deve localizar e processar arquivos de código em um repositório, criar um índice vetorial do conteúdo, e permitir consultas em linguagem natural sobre a estrutura e funcionalidade do código."
     }
 } 
