@@ -16,16 +16,12 @@ import PyPDF2
 import re
 import sys
 
-# Carregar as variáveis de ambiente
 load_dotenv()
 
-# Inicializar o cliente OpenAI
 client = OpenAI(api_key=os.getenv("api_key"))
 
-# Função para obter o caminho base do projeto
 def get_project_root():
     """Retorna o caminho raiz do projeto"""
-    # O script está em lecture_5/tasks/, então precisamos subir dois níveis
     script_dir = os.path.dirname(os.path.abspath(__file__))
     return os.path.dirname(os.path.dirname(script_dir))
 
@@ -52,7 +48,6 @@ class InvoiceParser:
         """
         try:
             print(f"Tentando extrair texto do PDF: {pdf_path}")
-            # Verificar se o arquivo existe
             if not os.path.exists(pdf_path):
                 print(f"ERRO: Arquivo não encontrado: {pdf_path}")
                 if not os.path.isabs(pdf_path):
@@ -74,7 +69,6 @@ class InvoiceParser:
                 for page in reader.pages:
                     text += page.extract_text() + "\n"
             
-            # Verificação para garantir que texto foi extraído
             if not text.strip():
                 print("AVISO: Texto extraído está vazio")
                 
@@ -93,9 +87,7 @@ class InvoiceParser:
         Returns:
             dict: Dados da fatura em formato estruturado
         """
-        # Verificar se é um caminho para um arquivo PDF
         if isinstance(invoice_input, str) and invoice_input.lower().endswith('.pdf'):
-            # Se o caminho não for absoluto, converter para absoluto
             if not os.path.isabs(invoice_input):
                 invoice_input = os.path.join(self.project_root, invoice_input)
                 print(f"Caminho convertido para absoluto: {invoice_input}")
@@ -106,13 +98,11 @@ class InvoiceParser:
             
             print(f"Texto extraído do PDF com sucesso ({len(invoice_text)} caracteres)")
         else:
-            # Assumir que é texto direto
             invoice_text = invoice_input
             print("Usando texto fornecido diretamente")
         
         print("Preparando para analisar a fatura...")
         
-        # Prompt engenheirado para extrair informações da fatura
         prompt = self._create_robust_prompt(invoice_text)
         
         print(f"Enviando solicitação para o modelo {self.model}...")
@@ -125,7 +115,6 @@ class InvoiceParser:
             response_format={"type": "json_object"}
         )
         
-        # Extrair o JSON da resposta
         try:
             print("Resposta recebida, processando JSON...")
             parsed_data = json.loads(response.choices[0].message.content)
@@ -263,27 +252,21 @@ class InvoiceParser:
         Returns:
             str: Caminho do arquivo salvo
         """
-        # Se não foi especificado um diretório de saída, usar o padrão
         if output_dir is None:
             output_dir = os.path.join(self.project_root, "lecture_5", "outputs")
         
-        # Se o caminho não for absoluto, converter para absoluto
         if not os.path.isabs(output_dir):
             output_dir = os.path.join(self.project_root, output_dir)
         
         print(f"Salvando resultado em: {output_dir}")
         
-        # Criar diretório de saída se não existir
         os.makedirs(output_dir, exist_ok=True)
         
-        # Garantir que o nome do arquivo termina com .json
         if not filename.endswith(".json"):
             filename += ".json"
         
-        # Caminho completo para o arquivo
         file_path = os.path.join(output_dir, filename)
         
-        # Salvar dados analisados como JSON
         with open(file_path, 'w', encoding='utf-8') as f:
             json.dump(parsed_data, f, ensure_ascii=False, indent=2)
         
@@ -304,33 +287,26 @@ def main():
     
     args = parser.parse_args()
     
-    # Inicializar o analisador
     invoice_parser = InvoiceParser(model=args.model)
     
-    # Obter o caminho raiz do projeto
     project_root = get_project_root()
     
-    # Se o caminho de entrada não for absoluto, torná-lo absoluto
     input_path = args.input
     if not os.path.isabs(input_path):
         input_path = os.path.join(project_root, input_path)
     
     print(f"Processando arquivo: {input_path}")
     
-    # Verificar se o arquivo de entrada existe
     if not os.path.exists(input_path):
         print(f"ERRO: Arquivo de entrada não encontrado: {input_path}")
         sys.exit(1)
     
-    # Analisar a fatura
     parsed_data = invoice_parser.parse_invoice(input_path)
     
-    # Se o caminho de saída não for absoluto, torná-lo absoluto
     output_dir = args.output
     if not os.path.isabs(output_dir):
         output_dir = os.path.join(project_root, output_dir)
     
-    # Salvar o resultado
     invoice_parser.save_parsed_invoice(parsed_data, output_dir=output_dir)
 
 

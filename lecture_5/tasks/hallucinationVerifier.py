@@ -6,10 +6,8 @@ import argparse
 import time
 from datetime import datetime
 
-# Carregando as variáveis de ambiente
 load_dotenv()
 
-# Inicializando o cliente OpenAI
 client = OpenAI(api_key=os.getenv("api_key"))
 
 class HallucinationVerifier:
@@ -24,7 +22,6 @@ class HallucinationVerifier:
         self.model = model
         self.output_dir = output_dir
         
-        # Criar o diretório de saída se não existir
         os.makedirs(output_dir, exist_ok=True)
         
     def ask_question(self, question):
@@ -148,7 +145,6 @@ class HallucinationVerifier:
         """
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
-        # Extrair a pontuação de alucinação do texto de verificação
         hallucination_score = "N/A"
         for line in verification.split('\n'):
             if "PONTUAÇÃO DE ALUCINAÇÃO" in line:
@@ -160,7 +156,6 @@ class HallucinationVerifier:
                     pass
                 break
         
-        # Extrair a classificação de confiabilidade
         reliability = "N/A"
         for line in verification.split('\n'):
             if any(class_type in line for class_type in ["Totalmente Respaldado", "Parcialmente Respaldado", "Não Respaldado"]):
@@ -177,12 +172,10 @@ class HallucinationVerifier:
             "reliability": reliability
         }
         
-        # Salvar o relatório como JSON
         report_path = os.path.join(self.output_dir, f"hallucination_report_{timestamp}.json")
         with open(report_path, 'w', encoding='utf-8') as f:
             json.dump(report, f, ensure_ascii=False, indent=4)
         
-        # Também salvar como TXT para facilitar a leitura
         txt_report = f"""RELATÓRIO DE VERIFICAÇÃO DE ALUCINAÇÃO
 Timestamp: {timestamp}
 
@@ -221,18 +214,14 @@ CLASSIFICAÇÃO DE CONFIABILIDADE: {reliability}
         """
         print(f"Iniciando verificação de alucinação para: '{question}'")
         
-        # Etapa 1: Perguntar ao LLM
         answer = self.ask_question(question)
-        time.sleep(1)  # Pequena pausa para evitar limites de taxa da API
+        time.sleep(1)
         
-        # Etapa 2: Solicitar fontes
         sources = self.request_sources(question, answer)
         time.sleep(1)
         
-        # Etapa 3: Verificar contra as fontes
         verification = self.verify_against_sources(question, answer, sources)
         
-        # Gerar relatório
         report = self.generate_report(question, answer, sources, verification)
         
         return report
