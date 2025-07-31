@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-07-29 15:07:36",
+  "original_input": "Hello, my name is John Smith and my email is john.smith@example.com.",
+  "safe_input": "Hello, my name is John Smith and my email is \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588.",
+  "input_detections": [
+    {
+      "text": "john.smith@example.com",
+      "start_pos": 45,
+      "end_pos": 67,
+      "type": "EMAIL",
+      "confidence": 0.95
+    }
+  ],
+  "original_output": "Hello! How can I assist you today?",
+  "safe_output": "Hello! How can I assist you today?",
+  "output_detections": [],
+  "model": "mock-model",
+  "has_input_redactions": true,
+  "has_output_redactions": false
+}

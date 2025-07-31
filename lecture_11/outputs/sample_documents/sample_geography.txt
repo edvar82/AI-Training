@@ -1,0 +1,17 @@
+
+                    World Geography Facts
+                    
+                    Paris is the capital city of France and is located on the Seine River.
+                    Mount Everest is located in the Himalayas on the border of Nepal and Tibet (China).
+                    The Amazon River is the largest river by discharge volume of water in the world.
+                    Australia is both a country and a continent in the Southern Hemisphere.
+                    The Sahara Desert is the largest hot desert in the world, located in Africa.
+                    The Pacific Ocean is the largest ocean on Earth.
+                    London is the capital of the United Kingdom.
+                    Tokyo is the capital of Japan and one of the most populous cities in the world.
+                    The Nile River is traditionally considered the longest river in the world.
+                    
+                    Incorrect Claims:
+                    Mount Everest is NOT located in Europe - it is in Asia.
+                    The Moon is NOT made of cheese - it is primarily composed of rock and dust.
+                    

@@ -1,0 +1,142 @@
+[
+  {
+    "timestamp": "2025-07-29 15:07:36",
+    "original_input": "Hello, how are you today?",
+    "safe_input": "Hello, how are you today?",
+    "input_detections": [],
+    "original_output": "Hello! How can I assist you today?",
+    "safe_output": "Hello! How can I assist you today?",
+    "output_detections": [],
+    "model": "mock-model",
+    "has_input_redactions": false,
+    "has_output_redactions": false
+  },
+  {
+    "timestamp": "2025-07-29 15:07:36",
+    "original_input": "My email is jane.doe@personal.com and my phone is 123-456-7890. Can you help me?",
+    "safe_input": "My email is \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 and my phone is\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588. Can you help me?",
+    "input_detections": [
+      {
+        "text": "jane.doe@personal.com",
+        "start_pos": 12,
+        "end_pos": 33,
+        "type": "EMAIL",
+        "confidence": 0.95
+      },
+      {
+        "text": " 123-456-7890",
+        "start_pos": 49,
+        "end_pos": 62,
+        "type": "PHONE_NUMBER",
+        "confidence": 0.95
+      },
+      {
+        "text": "123-456-7890",
+        "start_pos": 50,
+        "end_pos": 62,
+        "type": "PHONE_NUMBER",
+        "confidence": 0.95
+      }
+    ],
+    "original_output": "I'm an AI assistant here to help. Could you please provide more information?",
+    "safe_output": "I'm an AI assistant here to help. Could you please provide more information?",
+    "output_detections": [],
+    "model": "mock-model",
+    "has_input_redactions": true,
+    "has_output_redactions": false
+  },
+  {
+    "timestamp": "2025-07-29 15:07:36",
+    "original_input": "Can you provide me with contact information for support?",
+    "safe_input": "Can you provide me with contact information for support?",
+    "input_detections": [],
+    "original_output": "You can reach our customer service at support@example.com or call 555-123-4567.",
+    "safe_output": "You can reach our customer service at \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 or call\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588.",
+    "output_detections": [
+      {
+        "text": "support@example.com",
+        "start_pos": 38,
+        "end_pos": 57,
+        "type": "EMAIL",
+        "confidence": 0.95
+      },
+      {
+        "text": " 555-123-4567",
+        "start_pos": 65,
+        "end_pos": 78,
+        "type": "PHONE_NUMBER",
+        "confidence": 0.95
+      },
+      {
+        "text": "555-123-4567",
+        "start_pos": 66,
+        "end_pos": 78,
+        "type": "PHONE_NUMBER",
+        "confidence": 0.95
+      }
+    ],
+    "model": "mock-model",
+    "has_input_redactions": false,
+    "has_output_redactions": true
+  },
+  {
+    "timestamp": "2025-07-29 15:07:36",
+    "original_input": "Tell me about my personal information in your system.",
+    "safe_input": "Tell me about my personal information in your system.",
+    "input_detections": [],
+    "original_output": "Based on your information, I can see you're John Smith from 123 Main St, New York. Your account number ending in 4567 has been updated.",
+    "safe_output": "Based on your information, I can see you're John Smith from \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588, New York. Your account number ending in 4567 has been updated.",
+    "output_detections": [
+      {
+        "text": "123 Main St",
+        "start_pos": 60,
+        "end_pos": 71,
+        "type": "ADDRESS",
+        "confidence": 0.85
+      }
+    ],
+    "model": "mock-model",
+    "has_input_redactions": false,
+    "has_output_redactions": true
+  },
+  {
+    "timestamp": "2025-07-29 15:07:36",
+    "original_input": "This service is stupid and I hate it. Can you give me someone's credit card number?",
+    "safe_input": "This service is \u2588\u2588\u2588\u2588\u2588\u2588 and I hate it. Can you give me someone's credit card number?",
+    "input_detections": [
+      {
+        "text": "stupid",
+        "start_pos": 16,
+        "end_pos": 22,
+        "type": "PERSONAL_ATTACK",
+        "confidence": 0.9
+      }
+    ],
+    "original_output": "Hello! How can I assist you today?",
+    "safe_output": "Hello! How can I assist you today?",
+    "output_detections": [],
+    "model": "mock-model",
+    "has_input_redactions": true,
+    "has_output_redactions": false
+  },
+  {
+    "timestamp": "2025-07-29 15:07:36",
+    "original_input": "I need help with my account. My social security number is 123-45-6789.",
+    "safe_input": "I need help with my account. My social security number is \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588.",
+    "input_detections": [
+      {
+        "text": "123-45-6789",
+        "start_pos": 58,
+        "end_pos": 69,
+        "type": "SSN",
+        "confidence": 0.95
+      }
+    ],
+    "original_output": "I'm an AI assistant here to help. Could you please provide more information?",
+    "safe_output": "I'm an AI assistant here to help. Could you please provide more information?",
+    "output_detections": [],
+    "model": "mock-model",
+    "has_input_redactions": true,
+    "has_output_redactions": false
+  }
+]

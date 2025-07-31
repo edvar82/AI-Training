@@ -1,0 +1,16 @@
+
+                    Technology Facts
+                    
+                    Python is a high-level, interpreted programming language created by Guido van Rossum in 1991.
+                    Quantum computers use qubits instead of classical bits for computation.
+                    Bitcoin was created by a person or group using the pseudonym Satoshi Nakamoto in 2008.
+                    The internet evolved from ARPANET, which was developed in the late 1960s.
+                    Artificial Intelligence refers to machines that can learn from data and make decisions.
+                    The World Wide Web was invented by Tim Berners-Lee in 1989.
+                    HTML stands for HyperText Markup Language.
+                    
+                    Historical Technology Facts:
+                    Thomas Edison did NOT invent the internet - the internet was developed decades after his death.
+                    The first computer was developed in the 1940s, not the 1920s.
+                    5G networks do NOT cause or spread diseases - they are radio frequency technologies.
+                    
